@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* box-sizing: border-box will allow the padding and border to be included in an element's total width and height */
+    font-family: 'Merienda',
+    cursive;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    position: relative; /* this element will be positioned relative to its original position  */
+    display: flex;  /* By setting the parent element with the display property flex, All the child elements of this flexible container will automatically become flexible items */
+    justify-content: center; /*horizontal alignment  */
+    align-items: center; /* vertical alignment */
+    width: 100%;
+    height: 100%;
+    padding: 20px 100px; /* Top and Bottom is 20px. Right and Left is 100px  */
+
+}
+
+.container::after{
+    content: '';
+    position: absolute; /*will position relative to the nearest parent  */
+    left: 0; 
+    right: 0; /* left and right properties are related to absolute positioning  */
+    width: 100%;
+    height: 100%;
+    background: url("form-background.jpg") no-repeat center;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(50px);
+
+}
+
+.contact-box{
+    max-width: 850px;
+    display: grid; /* grid based layout with rows and columns */
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.left{
+    height: 100%;
+    background: url("form-background.jpg") no-repeat center;
+    background-size: cover;
+
+}
+
+.right{
+    padding: 25px 40px;
+}
+
+h2{
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+h2::after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 50px;
+    border-radius: 2px;
+    background-color: rgb(132, 170, 196);
+}
+
+
+.field{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: 2px solid rgba(0,0,0,0);
+    background-color: rgb(196, 222, 226, 0.2) ;
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    transition: .3s;
+
+}
+
+
+.field:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.field:focus{
+    background-color: #fff;
+    border: 2px solid rgba(43, 169, 228, 0.2);
+}
+
+.area{
+    height: 150px;
+}
+
+.button{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    background-color: rgb(93, 176, 224); 
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #fff;
+    transition: .3s;
+    
+}
+
+
+.button:hover{
+    background-color: rgb(46, 115, 243);
+}
+
+
+@media screen and (max-width:880px) {
+    .contact-box{
+        grid-template-columns: 1fr;
+    }
+
+    .left{
+        height: 200px;
+    }
+    
+}
+
+
+
+
